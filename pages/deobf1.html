@@ -4,6 +4,7 @@
         <meta charset="utf-8" />
         <title>Obfuscation Challenge #1</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="fpcomp Atom Feed" />
 
         <!--[if IE]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -438,48 +439,48 @@ Console.WriteLine(&quot;{0}{1}{2}{3}{4}&quot;,&quot;not &quot;,i.getrekd(),j.get
 
 <span class="k">void</span> <span class="n">sig</span><span class="p">(</span><span class="k">int</span> <span class="n">p</span><span class="p">)</span>
 <span class="p">{</span>
-<span class="n">longjmp</span><span class="p">(</span><span class="n">ib</span><span class="p">,</span> <span class="mh">1</span><span class="p">);</span>
+    <span class="n">longjmp</span><span class="p">(</span><span class="n">ib</span><span class="p">,</span> <span class="mh">1</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="k">int</span> <span class="n">is_prime</span><span class="p">(</span><span class="k">int</span> <span class="n">p</span><span class="p">)</span>
 <span class="p">{</span>
-<span class="k">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mh">2</span><span class="p">;</span>
+    <span class="k">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mh">2</span><span class="p">;</span>
 
-<span class="n">n</span> <span class="o">+=</span> <span class="n">setjmp</span><span class="p">(</span><span class="n">jb</span><span class="p">);</span>
+    <span class="n">n</span> <span class="o">+=</span> <span class="n">setjmp</span><span class="p">(</span><span class="n">jb</span><span class="p">);</span>
 
-<span class="k">if</span><span class="p">((</span><span class="n">p</span><span class="o">/</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mh">0</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">n</span><span class="o">!=</span><span class="n">p</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="p">(</span><span class="mh">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">p</span> <span class="o">%</span> <span class="n">n</span><span class="p">)))</span>
-<span class="k">return</span> <span class="mh">1</span><span class="p">;</span> <span class="c1">///prime number</span>
+    <span class="k">if</span><span class="p">((</span><span class="n">p</span><span class="o">/</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mh">0</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">n</span><span class="o">!=</span><span class="n">p</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="p">(</span><span class="mh">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">p</span> <span class="o">%</span> <span class="n">n</span><span class="p">)))</span>
+        <span class="k">return</span> <span class="mh">1</span><span class="p">;</span> <span class="c1">///prime number</span>
 
-<span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="n">p</span><span class="p">)</span>
-<span class="n">longjmp</span><span class="p">(</span><span class="n">jb</span><span class="p">,</span> <span class="mh">1</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="n">p</span><span class="p">)</span>
+        <span class="n">longjmp</span><span class="p">(</span><span class="n">jb</span><span class="p">,</span> <span class="mh">1</span><span class="p">);</span>
 
-<span class="k">return</span> <span class="mh">0</span><span class="p">;</span> <span class="c1">///not prime</span>
+    <span class="k">return</span> <span class="mh">0</span><span class="p">;</span> <span class="c1">///not prime</span>
 <span class="p">}</span>
 
 <span class="k">int</span> <span class="n">main</span><span class="p">(</span><span class="k">int</span> <span class="n">argc</span><span class="p">,</span> <span class="n">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
 <span class="p">{</span>
-<span class="n">signal</span><span class="p">(</span><span class="no">SIGFPE</span><span class="p">,</span> <span class="n">sig</span><span class="p">);</span>
+    <span class="n">signal</span><span class="p">(</span><span class="no">SIGFPE</span><span class="p">,</span> <span class="n">sig</span><span class="p">);</span>
 
-<span class="n">char</span> <span class="n">temp</span><span class="p">[</span><span class="mh">1000</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mh">0</span><span class="p">};</span>
+    <span class="n">char</span> <span class="n">temp</span><span class="p">[</span><span class="mh">1000</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mh">0</span><span class="p">};</span>
 
-<span class="n">char</span> <span class="n">ar</span><span class="p">[</span><span class="mh">180</span><span class="p">];</span>
+    <span class="n">char</span> <span class="n">ar</span><span class="p">[</span><span class="mh">180</span><span class="p">];</span>
 
-<span class="n">gets</span><span class="p">(</span><span class="n">ar</span><span class="p">);</span>
+    <span class="n">gets</span><span class="p">(</span><span class="n">ar</span><span class="p">);</span>
 
-<span class="k">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">ar</span><span class="p">);</span>
+    <span class="k">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">ar</span><span class="p">);</span>
 
-<span class="k">int</span> <span class="n">prime</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span>
+    <span class="k">int</span> <span class="n">prime</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span>
 
-<span class="n">memset</span><span class="p">(</span><span class="n">ar</span><span class="p">,</span> <span class="mh">1</span><span class="p">,</span> <span class="n">sizeof</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">)</span><span class="o">*</span><span class="mh">180</span><span class="p">);</span>
+    <span class="n">memset</span><span class="p">(</span><span class="n">ar</span><span class="p">,</span> <span class="mh">1</span><span class="p">,</span> <span class="n">sizeof</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">)</span><span class="o">*</span><span class="mh">180</span><span class="p">);</span>
 
-<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">setjmp</span><span class="p">(</span><span class="n">ib</span><span class="p">))</span>
-<span class="p">{</span>
-<span class="n">prime</span> <span class="o">=</span> <span class="n">is_prime</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
-<span class="p">}</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">setjmp</span><span class="p">(</span><span class="n">ib</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">prime</span> <span class="o">=</span> <span class="n">is_prime</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+    <span class="p">}</span>
 
-<span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">prime</span> <span class="o">?</span> <span class="s">&quot;Prime&quot;</span> <span class="o">:</span> <span class="s">&quot;Not prime&quot;</span><span class="p">));</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">prime</span> <span class="o">?</span> <span class="s">&quot;Prime&quot;</span> <span class="o">:</span> <span class="s">&quot;Not prime&quot;</span><span class="p">));</span>
 
-<span class="k">return</span> <span class="mh">0</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mh">0</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="c1">///tested under windows with mingw</span>
@@ -586,6 +587,13 @@ Console.WriteLine(&quot;{0}{1}{2}{3}{4}&quot;,&quot;not &quot;,i.getrekd(),j.get
 <p>Be sure to allow unsafe code when compiling.</p>
 </section>
         <section id="extras" class="body">
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                        </ul>
+                </div><!-- /.social -->
         </section><!-- /#extras -->
 
         <footer id="contentinfo" class="body">
