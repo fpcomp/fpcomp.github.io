@@ -1,0 +1,666 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>fpcomp - Obfuscation Challenge #1 Winners</title>
+    <link href='http://fonts.googleapis.com/css?family=Vollkorn:400,700|Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/obsidian.css">
+    <link rel="stylesheet" href="/bootstrap.css">
+    <link rel="stylesheet" href="/stylesheet.css">
+    <script src="/js/rainbow.js"></script>
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.7.1">
+  </head>
+  <body>
+    <div class="container">
+      <style>
+.container
+{
+  max-width: 980px;
+}
+</style>
+
+<h1 class="title">Obfuscation Challenge #1 Winners</h1>
+
+<p>It’s over! Here you can find the winners of the competition, as well as the analysis done by participants. Also, if you would, you can provide some feedback to help future competitions using <a href="https://docs.google.com/forms/d/14nxPeWbYG5nBJ3oS62ByeSvF90owEOo53Ff6a2JSLIQ/viewform">this</a> form.</p>
+
+<h2 id="winners">Winners</h2>
+
+<p>According to the scoring guidelines, there are three categories for scoring.</p>
+
+<h3 id="coding-round">Coding Round</h3>
+
+<p>Benjojo, Blasphemy, CarLuver69, Jamie1130, and Jookia won the coding round.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Participant</th>
+      <th>Points</th>
+      <th>Scoring</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Benjojo</td>
+      <td>100</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Blasphemy</td>
+      <td>100</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>CarLuver69</td>
+      <td>100</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Jamie1130</td>
+      <td>100</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Jookia</td>
+      <td>100</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Cartman300</td>
+      <td>90</td>
+      <td>Analyzed once.</td>
+    </tr>
+    <tr>
+      <td>Icedshot</td>
+      <td>90</td>
+      <td>Analyzed once.</td>
+    </tr>
+    <tr>
+      <td>Simspelaaja</td>
+      <td>90</td>
+      <td>Analyzed once.</td>
+    </tr>
+    <tr>
+      <td>Ollie</td>
+      <td>80</td>
+      <td>Analyzed twice.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="analysis-round">Analysis Round</h3>
+
+<p>Jookia won the analysis round.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Participant</th>
+      <th>Points</th>
+      <th>Scoring</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Jookia</td>
+      <td>30</td>
+      <td>Analyzed 3 entries.</td>
+    </tr>
+    <tr>
+      <td>Simspelaaja</td>
+      <td>10</td>
+      <td>Analyzed 1 entry.</td>
+    </tr>
+    <tr>
+      <td>CarLuver69</td>
+      <td>10</td>
+      <td>Analyzed 1 entry.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="overall">Overall</h3>
+
+<p>Jookia won overall. Congratulations!</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Participant</th>
+      <th>Points</th>
+      <th>Scoring</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Jookia</td>
+      <td>50</td>
+      <td>Analyzed 3 entries.</td>
+    </tr>
+    <tr>
+      <td>Benjojo</td>
+      <td>30</td>
+      <td>Provided documentation.</td>
+    </tr>
+    <tr>
+      <td>CarLuver69</td>
+      <td>30</td>
+      <td>Analyzed 1 entry.</td>
+    </tr>
+    <tr>
+      <td>Simspelaaja</td>
+      <td>25</td>
+      <td>Analyzed 1 entry, was analyzed by 1 person.</td>
+    </tr>
+    <tr>
+      <td>Jamie1130</td>
+      <td>20</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Blasphemy</td>
+      <td>20</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Cartman300</td>
+      <td>15</td>
+      <td>Analyzed by 1 person.</td>
+    </tr>
+    <tr>
+      <td>Icedshot</td>
+      <td>15</td>
+      <td>Analyzed by 1 person.</td>
+    </tr>
+    <tr>
+      <td>Ollie</td>
+      <td>10</td>
+      <td>Analyzed by 2 people.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="ollie">Ollie</h3>
+
+<p>Ollie’s code was analyzed by two people:</p>
+
+<h4 id="jookia">Jookia</h4>
+
+<pre><code class="language-c">#include &lt;iostream&gt; /* std::cin, std::cout, std::endl */
+#include &lt;stdlib.h&gt; /* abs */
+#include &lt;math.h&gt;   /* sqrt, ceil */
+
+int isPrime(int num)
+{
+  // Numbers I got from the original equation, used in the if statement:
+  // 0 == (0, float(0xDEADC0DE)) + 1
+  // 1 == (int)pow((float)0xFFF000, (float)0) - 1 &amp; (0xFFECBC7 &amp; 0x13438)
+  
+  // If the numbers are 0 or 1, they're not prime.
+  if(num == 0 || num == 1)
+  {
+    return 0;
+  }
+  
+  // Numbers I got from the original equation, used in the if statement:
+  // 2  == (int)sqrt(float(4))
+  // 0  == 0xA6EDED77 &amp; 0x59121288
+  // 2  == 1000342 % ( 10 % 11 )
+  // 10 == 10 % 11
+  
+  // If the last digit is even and num isn't 2, it's not prime.
+  if((num % 10) % 2 == 0 &amp;&amp; num != 2)
+  {
+    return 245; // 0xFF ^ 10
+  }
+  
+  // Numbers I got from the original equation, used in the if statement:
+  // 5 == 75 % ((2 * 5) % 100);
+  
+  // If the last digit is 5, but num isn't 5, it's not prime.
+  if((num % 10) == 5 &amp;&amp; num != 5)
+  {
+    return 0; // (0xADF ^ 10) &lt;&lt; 0xFF
+  }
+  
+  // Add all the digits in the number together.
+  
+  int absNum = abs(num);
+  int sum = 0;
+  
+  while(absNum &gt; 0)
+  {
+    sum += absNum % 10;
+    absNum /= 10;
+  }
+  
+  // If the digits summed are divisible by 3, it's not a prime. Since it's a
+  // sum, this basically means that if any digit in the number is divisible by
+  // 3, it's not a prime.
+  // BUG: This also marks 3 itself as not a prime as it contains a 3.
+  
+  // Numbers I got from the original equation, used in the if statement:
+  // 3 == 0xFF ^ 0xFC
+  
+  if(sum % 3 == 0)
+  {
+    return 7795; // 0xDEAD ^ 0xC0DE
+  }
+  
+  // Trial division! Now go from 2 to the square root of num.
+  // BUG: Due to an off-by-one error some numbers are wrongly marked as prime.
+  // BUG: Due to the floating point hackery, 2 is marked as not prime.
+  
+  for(int i = 2; i &lt; ceil(sqrt((float)num)); i++)
+  {
+    // If the number is divisible by i, it's not prime.
+    if(num % i == 0)
+    {
+      return 0;
+    }
+  }
+  
+  // It's prime!
+  return 1;
+}
+
+int main(void)
+{
+  // Get a number.
+  int num;
+  std::cin &gt;&gt; num;
+  
+  // If isPrime returns 1, it's prime.
+  std::cout &lt;&lt; (isPrime(num) == 1 ? "prime" : "not prime" ) &lt;&lt; std::endl;
+  
+  return 0;
+}
+</code></pre>
+
+<h4 id="simspelaaja">Simspelaaja</h4>
+
+<pre><code class="language-c">#include &lt;iostream&gt;
+#include &lt;math.h&gt;
+ 
+// isPrime(int n)
+// if n is prime, returns 1
+// otherwise, returns whatever the fuck it wants
+int f(int n)  
+{
+        // 1 and 0 are not primes
+        if(n == 1 || n == 0)
+        {
+                return 0; // so return 0
+        }
+ 
+        int ld = n % 10;
+ 
+        // multiples of 2 (except 2) and 10 are not primes
+        if ((n % 10) % 2 == 0 &amp;&amp; n != 2)
+        {
+                return 245; // yeah not a prime ok
+        }
+ 
+        // multiples of 5 bigger than 5 are not primes
+        if(ld == 5 &amp;&amp; n != 5)
+        {
+                return -2147483648; // so return this weird number
+        }
+ 
+        // sum some stuff together, entirely useless since (sum % 3) on line 43 can be replaced with (n % 3)
+        int n2;
+        int sum = 0;
+        n2 = abs(n);
+ 
+        while(n2 &gt; 0)  
+        {
+                sum = sum + n2 % 10;
+                n2 = n2/10;
+        }
+ 
+        // multiples of 3 are not primes
+        // 3 is a prime, but your forgot to check for that
+        // that's too bad
+        if(sum % 3 == 0)
+        {
+                return 7795; // yeah
+        }
+ 
+        // optimization: the highest number that needs to be tested for primality is sqrt(n)
+        int root = ceil(sqrt((float)n));
+ 
+        // just a normal primality test for all numbers 2 &lt; n &lt; sqrt(n), rendering all the code above mostly useless
+        for(int i = 2; i &lt; root;i++)
+        {
+                if(n % i == 0)
+                {
+                        return 0; // not a prime
+                }
+        }
+ 
+        // i guess it must be a prime then
+        return 1;
+}
+ 
+int main()  
+{
+        // read input
+        int n; std::cin &gt;&gt; n;
+ 
+        // call f(n), if it's a prime print "prime", otherwise "not prime"
+        std::cout &lt;&lt; (f(n) == 1 ? "prime" : "not prime" ) &lt;&lt; std::endl;
+       
+        return 0;
+}
+</code></pre>
+
+<h3 id="icedshot">Icedshot</h3>
+
+<p>Icedshot’s code was analyzed by one person:</p>
+
+<h4 id="jookia-1">Jookia</h4>
+
+<pre><code class="language-c">///Strictly a C program
+
+#include &amp;lt;setjmp.h&amp;gt; /* jmp_buf, longjmp, setjmp */
+#include &amp;lt;signal.h&amp;gt; /* signal */
+#include &amp;lt;stdlib.h&amp;gt; /* memset */
+#include &amp;lt;stdio.h&amp;gt; /* gets, printf */
+
+// Preface: This program uses jumps, which are a little unknown. If you don't
+// know about them read the man pages, or just think of them as exceptions.
+
+jmp_buf prime_jump; // Used to jump to prime_test.
+jmp_buf main_jmp; // Used to jump to main.
+
+void arith_error(int p);
+int prime_test(int p);
+
+int main(int argc, char** argv)
+{
+    // On arithmetic errors, use arith_error to jump back to main.
+    signal(SIGFPE, arith_error);
+    
+    // Catch the overflow from below so it doesn't wreck the stack.
+    char overflow[1000] = {0};
+    
+    // Use gets to (unsafely) read a number from stdin.
+    char buf[180];
+    gets(buf);
+    int num = atoi(buf);
+    
+    // Memset ar with 1s, except sizeof('a') isn't sizeof(char) so overflow.
+    memset(buf, 1, sizeof('a') * 180);
+    
+    // Assume the number isn't prime as we might not get a value from prime_test.
+    int is_prime = 0;
+    
+    // setjmp here will return 0 the first time it's run, running prime_test. If
+    // prime_test throws because the number is evenly divisible by another, it'll
+    // jump back here and is_prime will be still set to 0.
+    if(!setjmp(main_jmp))
+    {
+        is_prime = prime_test(num);
+    }
+    
+    // Make sure to start with a capital letter to break Jookia's test scripts. ;)
+    printf("%s", (is_prime ? "Prime" : "Not prime"));
+    
+    return 0;
+}
+
+void arith_error(int num)
+{
+    // This only happens when the number is divisible, jump to main returning 1.
+    longjmp(main_jmp, 1);
+}
+
+int prime_test(int num)
+{
+    // Start with div_num = 2, then loop and increment using jumps.
+    int div_num = 2;
+    div_num += setjmp(prime_jump); // Add 0 at first to start with 2.
+    {
+        // The number is positive if dividing it by div_num is positive.
+        int positive = (num / div_num) &amp;gt; 0;
+        
+        // This seems kinda useless but whatever.
+        if(positive &amp;&amp; num != div_num)
+        {
+            // If the number is evenly divisible by div_num, divide by zero and raise
+            // arith_error, otherwise make the remainder a fraction.
+            // fraction will be 1 if the remainder was 1, 0.5 if the remainder was 2
+            // (but this won't happen as that means it's divisible by 2 and that's the
+            // first thing we check for), and 0.3 if the remainder was 3, etc.
+            // Due to rounding down this means that we have a 1 if the remainder was
+            // 1, and 0 if the remainder was anything else.
+            int remain_frac = 1 / (num % div_num);
+            
+            // If the remainder fraction is rounded to 0, the number is probably prime
+            // given that we've made it so far without even division or a remainder
+            // that wasn't 1. I don't know if there's a name for this algorithm.
+            if(!remain_frac)
+            {
+                // BUG: Unfortunately since this is probability-based, composite numbers
+                // are marked as prime wrongly.
+                
+                return 1; ///prime number
+            }
+        }
+        
+        // Loop with the next number until we've tried all numbers &amp;lt;= num.
+        if(div_num &amp;lt; num)
+        {
+            longjmp(prime_jump, 1);
+        }
+        else
+        {
+            // Managed to get to num without a divisor or remainder that isn't 1, or
+            // div_num was larger than num.
+            // In practice this will only happen with the numbers &amp;lt;= 3.
+            
+            return 0; ///not prime
+        }
+    }
+}
+
+///tested under windows with mingw
+</code></pre>
+
+<h3 id="simspelaaja-1">Simspelaaja</h3>
+
+<p>Simspelaaja’s code was analyzed by one person:</p>
+
+<h4 id="carluver69">CarLuver69</h4>
+
+<pre><code class="language-csharp">using System;
+using System.Reflection.Emit;
+
+namespace O
+{
+    internal static class Ǘ
+    {
+        private static dynamic û, ũ;
+        private static long ù, ú;
+
+        private static void Main()
+        {
+        ú:
+            // read stdin
+            ù = long.Parse(Console.ReadLine());
+
+            /* deobfsucated code:
+               
+               long ú = 2;
+               bool isPrime = true;
+               
+               do
+               {
+                   if ((ù % ú) == 0)
+                   {
+                       isPrime = false;
+                       break;
+                   }
+               } while (ú++ &lt; (long)Math.Ceiling(Math.Sqrt(ù)));
+               
+               if (!isPrime)
+                   for (ù = 0; 4 &gt; ù; ù++)
+                       Console.Write((char)((0x20746f6e &gt;&gt; (sizeof(int) + typeof(Ǘ).GetMethods().Length) * (int)ù) &amp; 0xFF));
+               
+               for (ù = 0; 8 &gt; ù; ù++)
+                   Console.Write((char)((0xa656d697270 &gt;&gt; (sizeof(decimal) / (-~2 - 1)) * (int)ù) &amp; 0xFF));
+               
+               goto ú;
+            */
+
+            goto ű;
+        ů:
+            // prime - return 1
+            û.GetILGenerator().Emit(OpCodes.Ldc_I4_1);
+            û.GetILGenerator().Emit(OpCodes.Ret);
+
+            // not prime - return 0
+            û.GetILGenerator().MarkLabel(ũ);
+            û.GetILGenerator().Emit(OpCodes.Ldc_I4_0);
+            û.GetILGenerator().Emit(OpCodes.Ret);
+
+            // invoke method to determine if number is prime
+            ù = (int)û.CreateDelegate(typeof(Func&lt;int&gt;)).DynamicInvoke();
+
+            // if number is not prime
+            if (ù == 0)
+                // print each character in string 'not '
+                for (ù = 0; 4 &gt; ù; ù++)
+                    // Console.Write((char)((0x20746f6e &gt;&gt; 4 * (int)ù) &amp; 0xFF));
+                    Console.Write((char)((0x20746f6e &gt;&gt; (sizeof(int) + typeof(Ǘ).GetMethods().Length) * (int)ù) &amp; 0xFF));
+            // print each character in string 'prime', appending newline at end
+            for (ù = 0; 8 &gt; ù; ù++)
+                // Console.Write((char)((0xa656d697270 &gt;&gt; 4 * (int)ù) &amp; 0xFF));
+                Console.Write((char)((0xa656d697270 &gt;&gt; (sizeof(decimal) / (-~2 - 1)) * (int)ù) &amp; 0xFF));
+
+            // read next input
+            goto ú;
+        ű:
+            // create new method to check if a number is prime
+            û = new DynamicMethod("Ù", typeof(int), null);
+            ú = 2; // incrementor
+            ũ = û.GetILGenerator().DefineLabel();
+        ũ:
+            // perform modulus operation (primeNumber % i)
+            // if the result is zero, the number is NOT prime!
+            û.GetILGenerator().Emit(OpCodes.Ldc_I8, ù);
+            û.GetILGenerator().Emit(OpCodes.Ldc_I8, ú);
+            û.GetILGenerator().Emit(OpCodes.Rem);
+            û.GetILGenerator().Emit(OpCodes.Brfalse, ũ);
+
+            // increment and loop if less than square root of prime number
+            if (ú++ &lt; (long)Math.Ceiling(Math.Sqrt(ù)))
+                goto ũ;
+
+            // end of method
+            goto ů;
+
+            // never executed
+            goto ű;
+        }
+    }
+}
+</code></pre>
+
+<h3 id="cartman300">cartman300</h3>
+
+<p>cartman300’s code was analyzed by one person.</p>
+
+<h4 id="jookia-2">Jookia</h4>
+
+<pre><code class="language-c">#include &lt;stdio.h&gt;  /* scanf */
+#include &lt;unistd.h&gt; /* write */
+
+// A big string used for all the text.
+void* bigStr = " ENTRUMB:NOTPRIME\n%d";
+
+int main(int argc, char* argv[])
+{
+  void* numBuf;
+  int* num;   // Number to check for primeness.
+  int divNum; // Divisor used by trial division.
+  
+  // Functions were declared with different names for obfuscation purposes.
+  // void (*write)(void*, void*, int) = (void (*)(void*, void*, int))write;
+  // void (*scanf)(void*, void*)      = (void (*)(void*, void*))scanf;
+  
+  // This program is kind of structured as a REPL loop.
+  
+  goto enterPrime; // asm volatile("jmp enterPrime;
+  notPrime:        //                notPrime: nop");
+  write(0, bigStr + 9, 3); // "NOT"
+  write(0, bigStr, 1);     // " "
+  // Drop through to isPrime to print the 'PRIME' part.
+  
+  // Prints that the number is prime.
+  isPrime: // asm volatile("p:");
+  write(0, bigStr + 12, 6); // "PRIME\n"
+  // Drop through to enterPrime to get the next prime.
+  
+  enterPrime: // asm volatile("enterPrime:");
+  numBuf = &amp;numBuf;   // Have numBuf point to itself.
+  num = (int*)numBuf; // Have num point to numBuf's value (itself).
+  // Dead code: divNum = divNum;
+  write(0, bigStr + 1, 3); // "ENT"
+  write(0, bigStr + 1, 1); // "E"
+  write(0, bigStr + 4, 1); // "R"
+  write(0, bigStr,     1); // " "
+  write(0, bigStr + 2, 1); // "N"
+  write(0, bigStr + 5, 3); // "UMB"
+  write(0, bigStr + 1, 1); // "E"
+  write(0, bigStr + 4, 1); // "R"
+  write(0, bigStr + 8, 1); // ":"
+  write(0, bigStr,     1); // " "
+  scanf(bigStr + 18, numBuf); // Read "%d" in to numBuf, which num points to.
+  
+  // Check if the number is &lt; 2 using the sign bit.
+  if(~((~(*num - 0x2)) &gt;&gt; 31) &amp; 0x1)
+  {
+    goto notPrime; // asm volatile("jmp notPrime");
+  }
+  
+  // Uselessly copy the number to higher bits, then undo it.
+  *num = (*num + (*num &gt;&gt; sizeof(int) * 8 - 1)) ^ (*num &gt;&gt; sizeof(int) * 8 - 1);
+  
+  // Useless code.
+  for(divNum = 3; divNum*divNum &lt;= 20;divNum++);
+  
+  // Trial division incoming. Squaring divNum is like checking against the sqrt.
+  for(divNum = 2; (divNum * divNum) &lt;= *num; divNum++)
+  {
+    if(*num % divNum == 0)
+    {
+      goto notPrime; // asm volatile("jmp notPrime");
+    }
+  }
+  
+  goto isPrime; // asm volatile("jmp p");
+  
+  return 0;
+}
+</code></pre>
+
+<h3 id="benjojo">benjojo</h3>
+
+<p>Benjojo documented his own code for us! You can check it out on the <a href="https://gist.github.com/benjojo/4d72d2e522705f3528bc">gist</a> that he made.</p>
+
+    </div>
+    <script>
+      var elements = document.getElementsByTagName('code');
+      for(var i=0;i<elements.length;i++)
+      {
+        var e = elements[i];
+        var matches = e.className.match(/language-(.+?)(\s|$)/);
+        if(!matches || matches.length < 2) continue;
+        e.setAttribute('data-language', matches[1]);
+      }
+    </script>
+  </body>
+</html>

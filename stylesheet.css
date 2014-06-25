@@ -1,0 +1,30 @@
+body
+{
+    font-family: 'Vollkorn', 'Georgia', serif;
+    font-size: 15px;
+}
+.container
+{
+    max-width: 500px;
+}
+h1.title
+{
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+}
+a
+{
+    color: #888;
+}
+
+table {margin: .5em auto 1.5em auto; width: 98%;}
+thead th {padding: .5em .4em; text-align: left;}
+thead td {}
+tbody td {padding: .5em .4em;}
+tbody th {}
+tbody .alt td {}
+tbody .alt th {}
+tfoot th {}
+tfoot td {}
